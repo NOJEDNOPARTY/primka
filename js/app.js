@@ -16,6 +16,7 @@ var common = {
 		
 		// var bLazy = new Blazy({});
 
+		$('.tel-trigger').mask("+380(99) 999-99-99");
 
 	},
 	owl: function(){
