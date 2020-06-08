@@ -41,7 +41,7 @@
                 <div class="wrapper">
                     <div class="callback-item">
                         <a class="callback-number" href="tel:+380968200200">(096) 8-200-200</a>
-                        <a href="#" class="callback-trigger">Перезвонить?</a>
+                        <a href="#" class="callback-trigger call-popup" data-popup="formPopup">Перезвонить?</a>
                     </div>
                     <a href="#" class="logo"><img src="./images/logo.png" alt="logo"></a>
                     <div class="lang-item-wrap">
@@ -288,7 +288,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="btn">Получить консультацию</a>
+                <a href="#" class="btn call-popup" data-popup="formPopup">Получить консультацию</a>
             </div>
         </div>
         <div class="scheme" style="background-image: url('./images/scheme-bg.jpg');">
@@ -527,17 +527,16 @@
 
 
 
-    <!-- <div id="formPopup" class="popup-wrapper">
+    <div id="formPopup" class="popup-wrapper">
         <div class="popup-layout">
             <div class="popup">
-                <div class="popup-img"><img src="./images/popup-img.png" alt="popup-img"></div>
-                <div class="popup-cnt">
-                    <form action="">
-                        <div class="popup-title">Оставьте заявку</div>
-                        <div class="popup-subtitle">чтобы получить уникальное предложение</div>
-                        <input type="text" placeholder="Введите Ваше имя.." class="field field-name">
-                        <input type="tel" placeholder="Введите номер телефона ... " class="field phone-mask">
-                        <input class="btn" type="submit" value="Отправить">
+                <div class="form-block">
+                    <form action="#">
+                        <h3>оставить заявку</h3>
+                        <p>Перезвоним в течении <span>60 секунд</span></p>
+                        <input class="form-field" type="text" placeholder="Имя">
+                        <input class="form-field tel-trigger" type="tel" placeholder="Телефон">
+                        <input class="btn" type="submit" value="оставить заявку">
                     </form>
                 </div>
                 <div class="popup-close"><img src="./images/close-btn.svg" alt=""></div>
@@ -545,18 +544,17 @@
         </div>
     </div>
 
-    <div id="thanksPopup" class="popup-wrapper">
+    <div id="thanksPopup" class="popup-wrapper thanks-popup">
         <div class="popup-layout">
             <div class="popup">
-                <div class="popup-img"><img src="./images/popup-img.png" alt="popup-img"></div>
-                <div class="popup-cnt">
-                    <div class="popup-title">Спасибо!</div>
-                    <div class="popup-subtitle">Мы свяжемся с вами в ближайшее время </div>
+                <div class="form-block">
+                    <h3>Спасибо</h3>
+                    <p>Наш менеджер перезвонит вам в течении <span>60 секунд</span></p>
                 </div>
                 <div class="popup-close"><img src="./images/close-btn.svg" alt=""></div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <script src="./js/libs/jquery-3.3.1.min.js"></script>
     <script src="./js/libs/jquery.maskedinput.min.js"></script>
