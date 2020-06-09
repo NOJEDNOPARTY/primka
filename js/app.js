@@ -16,11 +16,30 @@ var common = {
 		});
 
 
+		function fixedHead() {
+			$('header').addClass('fixed');
+			$('.banner-wrapper').css({'padding-top':$('header').outerHeight()})
+			
+			if ($(window).scrollTop() > $('header').outerHeight())  {
+				$('header').addClass('dark');
+			}else {$('header').removeClass('dark');}
+		};
+
+		fixedHead();
+
+		$(window).resize(function() {
+			fixedHead();
+		});
+		$(window).scroll(function() {
+			fixedHead();
+		});
+
 		$('.call-popup').click(function(event){
 			event.preventDefault();
 			var popup  = '#' + $(this).attr('data-popup');
 			$('.popup-wrapper').removeClass('active');
 			$('body').addClass('hidden');
+			$('header').removeClass('open');
 			$(popup).addClass('active');
 		});
 
@@ -30,16 +49,13 @@ var common = {
 			$('body').removeClass('hidden');
 		})
 
-		// $('.menu-trigger').click(function(event){
-		// 	event.preventDefault();
-		// 	$('nav').addClass('open');
-		// })
-		// $('.nav-close').click(function(event){
-		// 	event.preventDefault();
-		// 	$('nav').removeClass('open');
-		// })
-		
-		// var bLazy = new Blazy({});
+		$('.menu-trigger').click(function(event){
+			event.preventDefault();
+			$('header').toggleClass('open');
+			$('body').toggleClass('hidden');
+		})
+	
+		var bLazy = new Blazy({});
 
 		$('.tel-trigger').mask("+380(99) 999-99-99");
 
@@ -51,12 +67,13 @@ var common = {
 			nav: true,
 			dots: false,
 			items: 1,
-			autoplay:true,
+			autoplay:false,
 			autoplayTimeout:4000,
 			autoplayHoverPause:true,
 			animateOut: 'fadeOut',
 			animateIn: 'fadeIn',
-			smartSpeed:450
+			smartSpeed:450,
+			autoHeight:true
 		})
 		$('.sertificates-slider').owlCarousel({
 			loop:true,
@@ -64,12 +81,27 @@ var common = {
 			nav: true,
 			dots: false,
 			items: 4,
-			autoplay:true,
+			autoplay:false,
 			autoplayTimeout:4000,
 			autoplayHoverPause:true,
 			animateOut: 'fadeOut',
 			animateIn: 'fadeIn',
-			smartSpeed:450
+			smartSpeed:450,
+			responsive:{
+				0:{
+					items:1,
+					margin:0,
+				},
+				450:{
+					items:2,
+				},
+				650:{
+					items:3,
+				},
+				901:{
+					items:4,
+				}
+			}
 		})
 	},
 	submitForm: function() {
